@@ -1,0 +1,49 @@
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+  //Flex
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.section-left{
+  width: 50%;
+  height: 100%;
+  //Flex
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  //Fondo
+  //Fondo de la imagen
+  background-image: url("/assets/images/login-bg.png");
+  //background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.section-right{
+  width: 50%;
+  height: 100%;
+  //Flex
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.logo-buap{
+  width: 280px;
+  height: 350px;
+}
+
+.logo-fcc{
+  width: 500px;
+  height: 180px;
+}
