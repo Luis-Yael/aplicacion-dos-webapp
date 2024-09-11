@@ -11,11 +11,13 @@ import { RegistroUsuariosScreenComponent } from './screens/registro-usuarios-scr
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
+import { NavbarComponent } from './partials/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginScreenComponent,
-    RegistroUsuariosScreenComponent
+    RegistroUsuariosScreenComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
