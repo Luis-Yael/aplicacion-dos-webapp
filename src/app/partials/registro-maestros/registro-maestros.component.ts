@@ -52,6 +52,8 @@ export class RegistroMaestrosComponent implements OnInit{
 
   ngOnInit(): void {
     this.maestro = this.maestrosService.esquemaMaestro();
+
+    this.maestro.rol = this.rol;
   }
 
   public regresar(){

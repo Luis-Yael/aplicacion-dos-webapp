@@ -31,6 +31,8 @@ export class RegistroAlumnosComponent implements OnInit{
 
   ngOnInit(): void {
     this.alumno = this.alumnosService.esquemaAlumno();
+
+    this.alumno.rol = this.rol;
   }
 
   public regresar(){
