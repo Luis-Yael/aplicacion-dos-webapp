@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { FacadeService } from 'src/app/services/facade.service';
 import { MaestrosService } from 'src/app/services/maestros.service';
 
@@ -29,13 +30,20 @@ export class MaestrosScreenComponent implements OnInit{
 
   constructor(
     public facadeService: FacadeService,
-    public maestrosService: MaestrosService
+    public maestrosService: MaestrosService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
     this.name_user = this.facadeService.getUserCompleteName();
     this.rol = this.facadeService.getUserGroup();
-
+    //Validar que haya inicio de sesión
+    //Obtengo el token del login
+    this.token = this.facadeService.getSessionToken();
+    console.log("Token: ", this.token);
+    if(this.token == ""){
+      this.router.navigate([""]);
+    }
     //Obtener maestros
     this.obtenerMaestros();
     //Para paginador
@@ -88,8 +96,8 @@ export class MaestrosScreenComponent implements OnInit{
     );
   }
 
-  public goEditar(id: number){
-
+  public goEditar(idUser: number){
+    this.router.navigate(["registro-usuarios/maestro/"+idUser]);
   }
 
   public delete(id: number){
